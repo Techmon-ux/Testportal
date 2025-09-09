@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login / Signup -->
+  <div id="auth" class="card">
+    <h2>Student Portal</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p class="link" onclick="toggleSignup()">New here? Signup</p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" class="hidden">
+    <header>
+      <h1>Welcome, <span id="studentName">Student</span></h1>
+      <button onclick="logout()">Logout</button>
+    </header>
+
+    <nav>
+      <button onclick="showPage('courses')">Courses</button>
+      <button onclick="showPage('tests')">Tests</button>
+      <button onclick="showPage('scores')">Scores</button>
+      <button onclick="showPage('announcements')">Announcements</button>
+      <button onclick="showPage('profile')">Profile</button>
+    </nav>
+
+    <main>
+      <!-- Courses -->
+      <section id="courses" class="page">
+        <h2>Your Courses</h2>
+        <ul>
+          <li>Accounting 101 – Intro Notes</li>
+          <li>Economics – Supply & Demand</li>
+          <li>Mathematics – Algebra Basics</li>
+        </ul>
+      </section>
+
+      <!-- Tests -->
+      <section id="tests" class="page hidden">
+        <h2>Tests & Assignments</h2>
+        <p>Upcoming: Economics Test – Sept 20</p>
+        <p>Past: Accounting Quiz – Score: 75%</p>
+        <button>Start Demo Quiz</button>
+      </section>
+
+      <!-- Scores -->
+      <section id="scores" class="page hidden">
+        <h2>Your Scores</h2>
+        <table>
+          <tr><th>Course</th><th>Score</th><th>Status</th></tr>
+          <tr><td>Accounting</td><td>75%</td><td>Passed</td></tr>
+          <tr><td>Economics</td><td>--</td><td>Upcoming</td></tr>
+          <tr><td>Math</td><td>60%</td><td>Passed</td></tr>
+        </table>
+      </section>
+
+      <!-- Announcements -->
+      <section id="announcements" class="page hidden">
+        <h2>Announcements</h2>
+        <p>📢 Class cancelled: Sept 12</p>
+        <p>📢 Submit assignments by Sept 18</p>
+      </section>
+
+      <!-- Profile -->
+      <section id="profile" class="page hidden">
+        <h2>Profile</h2>
+        <p>Name: David Afolarin</p>
+        <p>Matric No: OOU/23/001</p>
+        <p>Email: daidgold33@gmail.com</p>
+        <p>WhatsApp: +1 (938) 216 4813</p>
+        <p>Instagram: @olagunjudavidafolarin</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
